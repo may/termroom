@@ -93,7 +93,11 @@ class TermRoom(object):
             gtk.gdk.color_parse(self.profile["background_color"]),
             [gtk.gdk.color_parse(x) for x in self.profile["palette"].split(":")])
 
+        self.nmonitors = \
+            gtk.gdk.display_get_default().get_screen(0).get_n_monitors()
         (w, h) = (gtk.gdk.screen_width(), gtk.gdk.screen_height())
+        if w > h:
+            w = w/self.nmonitors
         width = int(WIDTH_RATIO * w)
         height = int(HEIGHT_RATIO * h)
         padding_x = int((w - width)/ 2)
