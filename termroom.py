@@ -86,7 +86,7 @@ class TermRoom(object):
             gtk.gdk.color_parse(self.profile["background_color"]))
          
         self.terminal.set_font_from_string(self.profile["font"])
-        self.terminal.set_allow_bold(self.profile["allow_bold"]) 
+#        self.terminal.set_allow_bold(self.profile["allow_bold"]) 
         self.terminal.set_audible_bell(not self.profile["silent_bell"]) 
         self.terminal.set_colors(
             gtk.gdk.color_parse(self.profile["foreground_color"]), 
